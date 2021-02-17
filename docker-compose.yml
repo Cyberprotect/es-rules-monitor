@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  es-rules-monitor:
+    image: es-rules-monitor
+    build: .
+    environment:
+      KIBANA_URL: http://localhost:5601
+      SCHEDULE_SECOND: 1800
+      MAILER_HOST: localhost
+      MAILER_PORT: 465
+      MAILER_SECURE: 0
+      MAILER_USER: root@localhost
+      MAILER_PASS:
+      MAILER_FROM: root@localhost
+      MAILER_TO: root@localhost
+      MAILER_SUBJECT: "[Elastic SIEM] Monitoring rules"
